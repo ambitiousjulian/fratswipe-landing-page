@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Link as ScrollLink } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   button: {
     color: '#fff',
     fontWeight: 'bold',
+    cursor: 'pointer',
   },
 }));
 
@@ -25,10 +27,18 @@ const Navbar = () => {
           <Typography variant="h6" className={classes.title}>
             FratSwipe
           </Typography>
-          <Button className={classes.button}>Home</Button>
-          <Button className={classes.button}>Features</Button>
-          <Button className={classes.button}>Testimonials</Button>
-          <Button className={classes.button}>Get Started</Button>
+          <ScrollLink to="home" smooth={true} duration={500}>
+            <Button className={classes.button}>Home</Button>
+          </ScrollLink>
+          <ScrollLink to="features" smooth={true} duration={500}>
+            <Button className={classes.button}>Features</Button>
+          </ScrollLink>
+          <ScrollLink to="testimonials" smooth={true} duration={500}>
+            <Button className={classes.button}>Testimonials</Button>
+          </ScrollLink>
+          <ScrollLink to="get-started" smooth={true} duration={500}>
+            <Button className={classes.button}>Get Started</Button>
+          </ScrollLink>
         </Toolbar>
       </Container>
     </AppBar>
