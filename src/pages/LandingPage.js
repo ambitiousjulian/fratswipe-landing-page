@@ -78,23 +78,25 @@ const useStyles = makeStyles((theme) => ({
   },
   getStartedButton: {
     marginTop: theme.spacing(7),
-    backgroundColor: '#000', // Apple's typical branding color
-    color: '#fff',
-    fontSize: '4.0rem', // Larger font size
-    padding: theme.spacing(2, 6), // More padding for a larger button
-    borderRadius: '25px', // Rounded corners
-    boxShadow: '0 12px 24px rgba(0,0,0,0.3)',
+    backgroundColor: '#000 !important', // Apple's typical branding color with !important
+    color: '#fff !important',
+    fontSize: '1.5rem !important', // Larger font size with !important
+    padding: theme.spacing(2, 6) + ' !important', // More padding with !important
+    borderRadius: '25px !important', // Rounded corners with !important
+    boxShadow: '0 12px 24px rgba(0,0,0,0.3) !important',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    textTransform: 'none !important', // Remove uppercase transformation with !important
     '&:hover': {
-      backgroundColor: '#333', // Darker on hover
-      transform: 'scale(1.1)', // Slight scale on hover
-      boxShadow: '0 15px 30px rgba(0,0,0,0.5)',
+      backgroundColor: '#333 !important', // Darker on hover with !important
+      transform: 'scale(1.1) !important', // Slight scale on hover with !important
+      boxShadow: '0 15px 30px rgba(0,0,0,0.5) !important',
     },
   },
   appleIcon: {
-    marginRight: theme.spacing(2), // Space between icon and text
+    marginRight: theme.spacing(2) + ' !important', // Space between icon and text with !important
+    fontSize: '2rem !important', // Larger icon size for emphasis with !important
   }
 }));
 

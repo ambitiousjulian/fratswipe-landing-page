@@ -1,5 +1,17 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import React, { useState } from 'react';
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Container,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { makeStyles } from '@mui/styles';
 import { Link as ScrollLink } from 'react-scroll';
 
@@ -17,10 +29,41 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
     cursor: 'pointer',
   },
+  menuButton: {
+    display: 'none', // Hide the menu button by default
+    [theme.breakpoints.down('sm')]: {
+      display: 'block', // Show the menu button on small screens
+    },
+    color: '#fff',
+  },
+  navButtons: {
+    display: 'flex',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none', // Hide nav buttons on small screens
+    },
+  },
+  list: {
+    width: 250,
+  },
 }));
 
 const Navbar = () => {
   const classes = useStyles();
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const menuItems = [
+    { label: 'Home', to: 'home' },
+    { label: 'Features', to: 'features' },
+    { label: 'Testimonials', to: 'testimonials' },
+    { label: 'Get Started', to: 'get-started' },
+  ];
 
   return (
     <AppBar position="static" className={classes.appBar}>
@@ -29,20 +72,40 @@ const Navbar = () => {
           <Typography variant="h6" className={classes.title}>
             FratSwipe
           </Typography>
-          <ScrollLink to="home" smooth={true} duration={500}>
-            <Button className={classes.button2}>Home</Button>
-          </ScrollLink>
-          <ScrollLink to="features" smooth={true} duration={500}>
-            <Button className={classes.button2}>Features</Button>
-          </ScrollLink>
-          <ScrollLink to="testimonials" smooth={true} duration={500}>
-            <Button className={classes.button2}>Testimonials</Button>
-          </ScrollLink>
-          <ScrollLink to="get-started" smooth={true} duration={500}>
-            <Button className={classes.button2}>Get Started</Button>
-          </ScrollLink>
+          <div className={classes.navButtons}>
+            {menuItems.map((item) => (
+              <ScrollLink key={item.to} to={item.to} smooth={true} duration={500}>
+                <Button className={classes.button2}>{item.label}</Button>
+              </ScrollLink>
+            ))}
+          </div>
+          <IconButton
+            edge="end"
+            className={classes.menuButton}
+            onClick={toggleDrawer(true)}
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </Container>
+      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+        <div
+          className={classes.list}
+          role="presentation"
+          onClick={toggleDrawer(false)}
+          onKeyDown={toggleDrawer(false)}
+        >
+          <List>
+            {menuItems.map((item) => (
+              <ListItem button key={item.to}>
+                <ScrollLink to={item.to} smooth={true} duration={500}>
+                  <ListItemText primary={item.label} />
+                </ScrollLink>
+              </ListItem>
+            ))}
+          </List>
+        </div>
+      </Drawer>
     </AppBar>
   );
 };

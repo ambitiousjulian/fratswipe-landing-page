@@ -81,3 +81,5 @@ dist
 # Serverless directories
 .serverless/
 
+/build/
+
