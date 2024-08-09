@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#f4f4f9',
     minHeight: '100vh',
   },
-  title: {
+  mainTitle: {
     fontFamily: 'Montserrat, sans-serif', // Using Montserrat for the title
     fontWeight: 700, // Bold weight for better emphasis
     fontSize: '2.5rem', // Increased font size for better visibility
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: '#3f51b5',
   },
-  title: {
+  sectionTitle: {
     fontFamily: '"Roboto Condensed", sans-serif', // Bold, condensed font
     fontWeight: 700,
     fontSize: '3rem', // Larger size for impact
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
   appleIcon: {
     marginRight: theme.spacing(2) + ' !important', // Space between icon and text with !important
     fontSize: '2rem !important', // Larger icon size for emphasis with !important
-  }
+  },
 }));
 
 const LandingPage = () => {
@@ -107,8 +107,17 @@ const LandingPage = () => {
     <Container maxWidth="lg" className={classes.root}>
       <Box id="home" my={4} className={classes.header}>
         <Fade>
-          <img src={logo} alt="FratSwipe Logo" style={{ maxWidth: '220px', margin: '0 auto', display: 'block', borderRadius: '30px' }}/>
-          <Typography variant="h2" className={classes.title} gutterBottom>
+          <img
+            src={logo}
+            alt="FratSwipe Logo"
+            style={{
+              maxWidth: '220px',
+              margin: '0 auto',
+              display: 'block',
+              borderRadius: '30px',
+            }}
+          />
+          <Typography variant="h2" className={classes.mainTitle} gutterBottom>
             Welcome to FratSwipe
           </Typography>
           <Typography variant="h5" align="center" paragraph>
@@ -130,7 +139,8 @@ const LandingPage = () => {
                   Easy to Use
                 </Typography>
                 <Typography>
-                  Our user-friendly interface ensures a seamless experience for both admins and members.
+                  Our user-friendly interface ensures a seamless experience for
+                  both admins and members.
                 </Typography>
               </Paper>
             </Zoom>
@@ -143,7 +153,8 @@ const LandingPage = () => {
                   Secure
                 </Typography>
                 <Typography>
-                  We prioritize your privacy and security with top-notch measures.
+                  We prioritize your privacy and security with top-notch
+                  measures.
                 </Typography>
               </Paper>
             </Zoom>
@@ -156,7 +167,8 @@ const LandingPage = () => {
                   24/7 Support
                 </Typography>
                 <Typography>
-                  Our support team is available around the clock to assist you with any issues.
+                  Our support team is available around the clock to assist you
+                  with any issues.
                 </Typography>
               </Paper>
             </Zoom>
@@ -170,12 +182,48 @@ const LandingPage = () => {
         </Typography>
         <Grid container spacing={3} className={classes.imageGrid}>
           <Bounce>
-            <Grid item><img src={frame1} alt="Frame 1" className={classes.frameImage} /></Grid>
-            <Grid item><img src={frame2} alt="Frame 2" className={classes.frameImage} /></Grid>
-            <Grid item><img src={frame3} alt="Frame 3" className={classes.frameImage} /></Grid>
-            <Grid item><img src={frame4} alt="Frame 4" className={classes.frameImage} /></Grid>
-            <Grid item><img src={frame5} alt="Frame 5" className={classes.frameImage} /></Grid>
-            <Grid item><img src={frame6} alt="Frame 6" className={classes.frameImage} /></Grid>
+            <Grid item>
+              <img
+                src={frame1}
+                alt="Frame 1"
+                className={classes.frameImage}
+              />
+            </Grid>
+            <Grid item>
+              <img
+                src={frame2}
+                alt="Frame 2"
+                className={classes.frameImage}
+              />
+            </Grid>
+            <Grid item>
+              <img
+                src={frame3}
+                alt="Frame 3"
+                className={classes.frameImage}
+              />
+            </Grid>
+            <Grid item>
+              <img
+                src={frame4}
+                alt="Frame 4"
+                className={classes.frameImage}
+              />
+            </Grid>
+            <Grid item>
+              <img
+                src={frame5}
+                alt="Frame 5"
+                className={classes.frameImage}
+              />
+            </Grid>
+            <Grid item>
+              <img
+                src={frame6}
+                alt="Frame 6"
+                className={classes.frameImage}
+              />
+            </Grid>
           </Bounce>
         </Grid>
       </Box>
@@ -206,9 +254,13 @@ const LandingPage = () => {
             Get Started
           </Typography>
           <Typography variant="h6" paragraph>
-            Download FratSwipe today and streamline your fraternity and sorority recruitment!
+            Download FratSwipe today and streamline your fraternity and sorority
+            recruitment!
           </Typography>
-          <Button className={classes.getStartedButton} startIcon={<AppleIcon className={classes.appleIcon}/>}>
+          <Button
+            className={classes.getStartedButton}
+            startIcon={<AppleIcon className={classes.appleIcon} />}
+          >
             Download Now
           </Button>
         </Fade>
