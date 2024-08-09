@@ -11,6 +11,18 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "https://www.fratswipe.com",
+        "type": 301
+      },
+      {
+        "source": "/fratswipe.com",
+        "destination": "https://www.fratswipe.com",
+        "type": 301
+      }
     ]
   }
 }
