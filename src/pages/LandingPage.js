@@ -3,79 +3,99 @@ import { Container, Typography, Grid, Paper, Box, Button } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Fade, Zoom, Bounce } from 'react-reveal';
 import { FaCheckCircle, FaShieldAlt, FaHeadset } from 'react-icons/fa';
-import frame1 from '../assets/frame1.png'; // Replace with the actual paths to your images
+import frame1 from '../assets/frame1.png';
 import frame2 from '../assets/frame2.png';
 import frame3 from '../assets/frame3.png';
 import frame4 from '../assets/frame4.png';
 import frame5 from '../assets/frame5.png';
 import frame6 from '../assets/frame6.png';
+import logo from '../assets/logo2.png';
+import AppleIcon from '@mui/icons-material/Apple';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(4),
-    background: 'linear-gradient(135deg, #ff9a9e, #c2e9fb)',
+    padding: theme.spacing(6), // Increased padding for better spacing
+    backgroundColor: '#f4f4f9',
     minHeight: '100vh',
   },
-  header: {
-    marginBottom: theme.spacing(6),
-    textAlign: 'center',
-    color: '#fff',
+  title: {
+    fontFamily: 'Montserrat, sans-serif', // Using Montserrat for the title
+    fontWeight: 700, // Bold weight for better emphasis
+    fontSize: '2.5rem', // Increased font size for better visibility
+    color: '#3f51b5', // Using the theme color
+    marginBottom: theme.spacing(2), // Added spacing for better layout
   },
-  icon: {
-    fontSize: '4rem',
-    color: '#ff9a9e',
+  header: {
+    marginBottom: theme.spacing(10),
+    textAlign: 'center',
+    color: '#3f51b5',
+  },
+  title: {
+    fontFamily: '"Roboto Condensed", sans-serif', // Bold, condensed font
+    fontWeight: 700,
+    fontSize: '3rem', // Larger size for impact
+    color: '#3f51b5',
+    textShadow: '2px 2px 4px rgba(0,0,0,0.5)', // Adding a subtle shadow for depth
   },
   paper: {
-    padding: theme.spacing(4),
+    padding: theme.spacing(6), // Increased padding inside the papers
     textAlign: 'center',
-    background: 'rgba(255, 255, 255, 0.9)',
+    background: '#fff !important',
     color: '#333',
-    borderRadius: '12px',
-    transition: 'transform 0.3s',
+    borderRadius: '25px', // Increased border radius
+    boxShadow: '0 8px 24px rgba(0,0,0,0.18)',
     '&:hover': {
-      transform: 'translateY(-10px)',
+      transform: 'translateY(-5px)',
+      transition: 'transform 0.3s ease-in-out', // Smooth transition for hover
     },
   },
   section: {
-    marginBottom: theme.spacing(6),
+    marginBottom: theme.spacing(12), // Increased section separation
   },
   imageGrid: {
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
-    gap: theme.spacing(3),
+    gap: theme.spacing(5), // Increased gap
   },
   frameImage: {
     width: '100%',
     height: 'auto',
-    maxWidth: '300px', // Adjust based on your design
-    borderRadius: '8px',
-    boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
-    transition: 'transform 0.3s',
+    maxWidth: '340px', // Slightly increased max width
+    borderRadius: '25px', // Rounded corners for images
+    boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
     '&:hover': {
-      transform: 'scale(1.05)',
+      transform: 'scale(1.05)', // Subtle zoom effect on hover
     },
   },
   testimonial: {
-    padding: theme.spacing(4),
-    marginBottom: theme.spacing(2),
-    background: 'rgba(255, 255, 255, 0.9)',
-    borderRadius: '12px',
+    padding: theme.spacing(5),
+    marginBottom: theme.spacing(5),
+    background: '#fff',
+    borderRadius: '25px',
     textAlign: 'left',
-    boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
+    boxShadow: '0 10px 20px rgba(0,0,0,0.2)',
   },
   getStartedButton: {
-    marginTop: theme.spacing(4),
-    background: '#ff9a9e',
+    marginTop: theme.spacing(7),
+    backgroundColor: '#000', // Apple's typical branding color
     color: '#fff',
-    fontSize: '1.2rem',
-    padding: theme.spacing(1.5, 3),
-    borderRadius: '8px',
-    transition: 'background 0.3s',
+    fontSize: '4.0rem', // Larger font size
+    padding: theme.spacing(2, 6), // More padding for a larger button
+    borderRadius: '25px', // Rounded corners
+    boxShadow: '0 12px 24px rgba(0,0,0,0.3)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     '&:hover': {
-      background: '#feb47b',
+      backgroundColor: '#333', // Darker on hover
+      transform: 'scale(1.1)', // Slight scale on hover
+      boxShadow: '0 15px 30px rgba(0,0,0,0.5)',
     },
   },
+  appleIcon: {
+    marginRight: theme.spacing(2), // Space between icon and text
+  }
 }));
 
 const LandingPage = () => {
@@ -85,7 +105,8 @@ const LandingPage = () => {
     <Container maxWidth="lg" className={classes.root}>
       <Box id="home" my={4} className={classes.header}>
         <Fade>
-          <Typography variant="h2" align="center" gutterBottom>
+          <img src={logo} alt="FratSwipe Logo" style={{ maxWidth: '220px', margin: '0 auto', display: 'block', borderRadius: '30px' }}/>
+          <Typography variant="h2" className={classes.title} gutterBottom>
             Welcome to FratSwipe
           </Typography>
           <Typography variant="h5" align="center" paragraph>
@@ -142,40 +163,18 @@ const LandingPage = () => {
       </Box>
 
       <Box id="app-screens" my={4} className={classes.section}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" gutterBottom padding={6}>
           App Screens
         </Typography>
         <Grid container spacing={3} className={classes.imageGrid}>
-          <Grid item>
-            <Bounce>
-              <img src={frame1} alt="Frame 1" className={classes.frameImage} />
-            </Bounce>
-          </Grid>
-          <Grid item>
-            <Bounce>
-              <img src={frame2} alt="Frame 2" className={classes.frameImage} />
-            </Bounce>
-          </Grid>
-          <Grid item>
-            <Bounce>
-              <img src={frame3} alt="Frame 3" className={classes.frameImage} />
-            </Bounce>
-          </Grid>
-          <Grid item>
-            <Bounce>
-              <img src={frame4} alt="Frame 4" className={classes.frameImage} />
-            </Bounce>
-          </Grid>
-          <Grid item>
-            <Bounce>
-              <img src={frame5} alt="Frame 5" className={classes.frameImage} />
-            </Bounce>
-          </Grid>
-          <Grid item>
-            <Bounce>
-              <img src={frame6} alt="Frame 6" className={classes.frameImage} />
-            </Bounce>
-          </Grid>
+          <Bounce>
+            <Grid item><img src={frame1} alt="Frame 1" className={classes.frameImage} /></Grid>
+            <Grid item><img src={frame2} alt="Frame 2" className={classes.frameImage} /></Grid>
+            <Grid item><img src={frame3} alt="Frame 3" className={classes.frameImage} /></Grid>
+            <Grid item><img src={frame4} alt="Frame 4" className={classes.frameImage} /></Grid>
+            <Grid item><img src={frame5} alt="Frame 5" className={classes.frameImage} /></Grid>
+            <Grid item><img src={frame6} alt="Frame 6" className={classes.frameImage} /></Grid>
+          </Bounce>
         </Grid>
       </Box>
 
@@ -190,8 +189,6 @@ const LandingPage = () => {
             </Typography>
             <Typography>- John Doe, Chapter President</Typography>
           </Paper>
-        </Fade>
-        <Fade>
           <Paper elevation={3} className={classes.testimonial}>
             <Typography variant="h6" gutterBottom>
               "A must-have for any fraternity or sorority."
@@ -209,7 +206,9 @@ const LandingPage = () => {
           <Typography variant="h6" paragraph>
             Download FratSwipe today and streamline your fraternity and sorority recruitment!
           </Typography>
-          <Button className={classes.getStartedButton}>Download Now</Button>
+          <Button className={classes.getStartedButton} startIcon={<AppleIcon className={classes.appleIcon}/>}>
+            Download Now
+          </Button>
         </Fade>
       </Box>
     </Container>

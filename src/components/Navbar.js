@@ -3,15 +3,17 @@ import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import { Link as ScrollLink } from 'react-scroll';
 
+// Update your useStyles in Navbar component
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    background: 'linear-gradient(to bottom, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb)',
+    backgroundColor: '#283593', // Ensuring a solid dark blue background
   },
   title: {
+    color: '#fff',
     flexGrow: 1,
   },
-  button: {
-    color: '#fff',
+  button2: {
+    color: '#fff !important', // Using !important to override any other styles
     fontWeight: 'bold',
     cursor: 'pointer',
   },
@@ -28,16 +30,16 @@ const Navbar = () => {
             FratSwipe
           </Typography>
           <ScrollLink to="home" smooth={true} duration={500}>
-            <Button className={classes.button}>Home</Button>
+            <Button className={classes.button2}>Home</Button>
           </ScrollLink>
           <ScrollLink to="features" smooth={true} duration={500}>
-            <Button className={classes.button}>Features</Button>
+            <Button className={classes.button2}>Features</Button>
           </ScrollLink>
           <ScrollLink to="testimonials" smooth={true} duration={500}>
-            <Button className={classes.button}>Testimonials</Button>
+            <Button className={classes.button2}>Testimonials</Button>
           </ScrollLink>
           <ScrollLink to="get-started" smooth={true} duration={500}>
-            <Button className={classes.button}>Get Started</Button>
+            <Button className={classes.button2}>Get Started</Button>
           </ScrollLink>
         </Toolbar>
       </Container>

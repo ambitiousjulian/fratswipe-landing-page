@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to bottom, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    background: #f4f4f9; // Neutral background color
     color: #333;
     min-height: 100vh;
   }
