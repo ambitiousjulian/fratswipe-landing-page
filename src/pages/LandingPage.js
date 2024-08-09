@@ -189,13 +189,13 @@ const LandingPage = () => {
             <Typography variant="h6" gutterBottom>
               "FratSwipe revolutionized our recruitment process!"
             </Typography>
-            <Typography>- John Doe, Chapter President</Typography>
+            <Typography>- Andrew Delaney, Chapter President</Typography>
           </Paper>
           <Paper elevation={3} className={classes.testimonial}>
             <Typography variant="h6" gutterBottom>
               "A must-have for any fraternity or sorority."
             </Typography>
-            <Typography>- Jane Smith, Chapter Member</Typography>
+            <Typography>- Saheer Osmuld, Chapter Member</Typography>
           </Paper>
         </Fade>
       </Box>
