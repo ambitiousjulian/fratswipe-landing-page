@@ -261,7 +261,7 @@ const LandingPage = () => {
             className={classes.getStartedButton}
             startIcon={<AppleIcon className={classes.appleIcon} />}
           >
-            Download Now
+            Coming September 2024
           </Button>
         </Fade>
       </Box>
