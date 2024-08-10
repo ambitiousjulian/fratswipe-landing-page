@@ -389,8 +389,11 @@ const LandingPage = () => {
           <MuiButton
             className={classes.getStartedButton}
             startIcon={<AppleIcon className={classes.appleIcon} />}
+            href="https://apps.apple.com/us/app/fratswipe/id6520395751" // Link to the App Store
+            target="_blank" // Open the link in a new tab
+            rel="noopener noreferrer" // Security attributes for opening the link
           >
-            Coming September 2024
+            Download on the App Store
           </MuiButton>
         </Fade>
       </Box>
