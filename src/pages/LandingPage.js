@@ -274,8 +274,84 @@ const LandingPage = () => {
         </Fade>
       </Box>
 
-      <Box id="features" my={4} className={classes.section}>
+        
+
+      <Box id="app-screens" my={4} className={classes.section}>
+        <Typography variant="h4" gutterBottom padding={6}>
+          App Screens
+        </Typography>
+        <Grid container spacing={3} className={classes.imageGrid}>
+          <Bounce>
+            <Grid item>
+              <img src={frame1} alt="Frame 1" className={classes.frameImage} />
+            </Grid>
+            <Grid item>
+              <img src={frame2} alt="Frame 2" className={classes.frameImage} />
+            </Grid>
+            <Grid item>
+              <img src={frame3} alt="Frame 3" className={classes.frameImage} />
+            </Grid>
+            <Grid item>
+              <img src={frame4} alt="Frame 4" className={classes.frameImage} />
+            </Grid>
+            <Grid item>
+              <img src={frame5} alt="Frame 5" className={classes.frameImage} />
+            </Grid>
+            <Grid item>
+              <img src={frame6} alt="Frame 6" className={classes.frameImage} />
+            </Grid>
+          </Bounce>
+        </Grid>
+      </Box>
+
+      <Box
+        id="get-started"
+        my={4}
+        className={classes.section}
+        textAlign="center"
+      >
+        <Fade>
+          <Typography variant="h4" gutterBottom>
+            Get Started
+          </Typography>
+          <Typography variant="h6" paragraph>
+            Download FratSwipe today and streamline your fraternity and sorority
+            recruitment!
+          </Typography>
+          <MuiButton
+            className={classes.getStartedButton}
+            startIcon={<AppleIcon className={classes.appleIcon} />}
+            href="https://apps.apple.com/us/app/fratswipe/id6520395751" // Link to the App Store
+            target="_blank" // Open the link in a new tab
+            rel="noopener noreferrer" // Security attributes for opening the link
+          >
+            Download on the App Store
+          </MuiButton>
+        </Fade>
+      </Box>
+
+      <Box id="testimonials" my={4} className={classes.section}>
         <Typography variant="h4" gutterBottom>
+          Testimonials
+        </Typography>
+        <Fade>
+          <Paper elevation={3} className={classes.testimonial}>
+            <Typography variant="h6" gutterBottom>
+              "FratSwipe revolutionized our recruitment process!"
+            </Typography>
+            <Typography>- Andrew Delaney, Chapter President</Typography>
+          </Paper>
+          <Paper elevation={3} className={classes.testimonial}>
+            <Typography variant="h6" gutterBottom>
+              "A must-have for any fraternity or sorority."
+            </Typography>
+            <Typography>- Saheer Osmuld, Chapter Member</Typography>
+          </Paper>
+        </Fade>
+      </Box>
+
+      <Box id="features" my={4} className={classes.section}>
+      <Typography variant="h4" gutterBottom>
           Features
         </Typography>
         <Grid container spacing={3}>
@@ -322,80 +398,6 @@ const LandingPage = () => {
             </Zoom>
           </Grid>
         </Grid>
-      </Box>
-
-      <Box id="app-screens" my={4} className={classes.section}>
-        <Typography variant="h4" gutterBottom padding={6}>
-          App Screens
-        </Typography>
-        <Grid container spacing={3} className={classes.imageGrid}>
-          <Bounce>
-            <Grid item>
-              <img src={frame1} alt="Frame 1" className={classes.frameImage} />
-            </Grid>
-            <Grid item>
-              <img src={frame2} alt="Frame 2" className={classes.frameImage} />
-            </Grid>
-            <Grid item>
-              <img src={frame3} alt="Frame 3" className={classes.frameImage} />
-            </Grid>
-            <Grid item>
-              <img src={frame4} alt="Frame 4" className={classes.frameImage} />
-            </Grid>
-            <Grid item>
-              <img src={frame5} alt="Frame 5" className={classes.frameImage} />
-            </Grid>
-            <Grid item>
-              <img src={frame6} alt="Frame 6" className={classes.frameImage} />
-            </Grid>
-          </Bounce>
-        </Grid>
-      </Box>
-
-      <Box id="testimonials" my={4} className={classes.section}>
-        <Typography variant="h4" gutterBottom>
-          Testimonials
-        </Typography>
-        <Fade>
-          <Paper elevation={3} className={classes.testimonial}>
-            <Typography variant="h6" gutterBottom>
-              "FratSwipe revolutionized our recruitment process!"
-            </Typography>
-            <Typography>- Andrew Delaney, Chapter President</Typography>
-          </Paper>
-          <Paper elevation={3} className={classes.testimonial}>
-            <Typography variant="h6" gutterBottom>
-              "A must-have for any fraternity or sorority."
-            </Typography>
-            <Typography>- Saheer Osmuld, Chapter Member</Typography>
-          </Paper>
-        </Fade>
-      </Box>
-
-      <Box
-        id="get-started"
-        my={4}
-        className={classes.section}
-        textAlign="center"
-      >
-        <Fade>
-          <Typography variant="h4" gutterBottom>
-            Get Started
-          </Typography>
-          <Typography variant="h6" paragraph>
-            Download FratSwipe today and streamline your fraternity and sorority
-            recruitment!
-          </Typography>
-          <MuiButton
-            className={classes.getStartedButton}
-            startIcon={<AppleIcon className={classes.appleIcon} />}
-            href="https://apps.apple.com/us/app/fratswipe/id6520395751" // Link to the App Store
-            target="_blank" // Open the link in a new tab
-            rel="noopener noreferrer" // Security attributes for opening the link
-          >
-            Download on the App Store
-          </MuiButton>
-        </Fade>
       </Box>
 
       {/* Contact Us Section */}
